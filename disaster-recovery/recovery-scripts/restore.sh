@@ -3,7 +3,7 @@ set -e
 
 echo "🚨 Starting Disaster Recovery"
 
-AMI_ID="ami-0e7a08c2102b25caf"  # Replace
+AMI_ID="ami-00b7c2c67ae668c17"  # Replace
 INSTANCE_TYPE="t2.micro"
 KEY_NAME="GitOps-Practice"
 SECURITY_GROUP_ID="sg-023554b5a9434b817"  # Replace
