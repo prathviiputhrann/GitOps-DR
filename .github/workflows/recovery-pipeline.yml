@@ -21,4 +21,4 @@ jobs:
           echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: Run Recovery Script
-        run: bash disaster-recovery/recovery-script.sh
+        run: bash disaster-recovery/recovery-scripts/restore.sh
