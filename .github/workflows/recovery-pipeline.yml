@@ -1,7 +1,9 @@
 name: AWS Disaster Recovery
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main   # Triggers workflow when code is pushed to 'main' branch
 
 jobs:
   recovery:
