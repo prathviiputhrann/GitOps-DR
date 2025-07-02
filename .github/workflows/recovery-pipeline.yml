@@ -9,17 +9,16 @@ jobs:
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
       AWS_DEFAULT_REGION: us-west-2
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install AWS CLI
+      - name: Install AWS CLI using pip
         run: |
-          sudo apt-get update
-          sudo apt-get install -y awscli
+          pip install --upgrade --user awscli
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: Run Recovery Script
         run: bash disaster-recovery/recovery-script.sh
