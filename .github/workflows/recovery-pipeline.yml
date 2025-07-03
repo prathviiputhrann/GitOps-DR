@@ -3,10 +3,11 @@ name: AWS Disaster Recovery
 on:
   push:
     branches:
-      - main   # Triggers workflow when code is pushed to 'main' branch
+      - main   # Only monitor 'main' branch
 
 jobs:
   recovery:
+    if: contains(github.event.head_commit.message, '[trigger-dr]') # Only run if commit message contains [trigger-dr]
     runs-on: ubuntu-latest
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
