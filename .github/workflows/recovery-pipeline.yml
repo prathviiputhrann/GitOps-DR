@@ -3,7 +3,7 @@ name: AWS Disaster Recovery
 on:
   push:
     branches:
-      - main   # Only monitor 'main' branch
+      - main   # Only monitor 'main' branch not other
 
 jobs:
   recovery:
